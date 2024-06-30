@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Currículo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container no-print needs-validation" novalidate>
+    <h1 class="text-center">Gerador de Currículo</h1>
+
+    <div class="section">
+        <h2 class="text-center">Dados Pessoais</h2>
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" class="form-control" id="name" required>
+            <div class="invalid-feedback">Por favor, insira o seu nome.</div>
+        </div>
+        <div class="form-group">
+            <label for="age">Idade:</label>
+            <input type="number" class="form-control" id="age" required>
+            <div class="invalid-feedback">Por favor, insira a sua idade.</div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">Por favor, insira um email válido.</div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefone:</label>
+            <input type="tel" class="form-control" id="phone" required>
+            <div class="invalid-feedback">Por favor, insira o seu telefone.</div>
+        </div>
+        <div class="form-group">
+            <label for="photo">Foto:</label>
+            <input type="file" class="form-control-file" id="photo" accept="image/*" onchange="previewPhoto(event)">
+            <div class="invalid-feedback">Por favor, insira uma foto.</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="text-center">Habilidades</h2>
+        <div id="skills">
+            <div class="form-group">
+                <input type="text" class="form-control" name="skill" required>
+                <div class="invalid-feedback">Por favor, insira uma habilidade.</div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" onclick="addSkill()">Adicionar Habilidade</button>
+    </div>
+
+    <div class="section">
+        <h2 class="text-center">Experiências</h2>
+        <div id="experiences">
+            <div class="form-group">
+                <textarea class="form-control" name="experience" rows="3" required></textarea>
+                <div class="invalid-feedback">Por favor, insira uma experiência.</div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" onclick="addExperience()">Adicionar Experiência</button>
+    </div>
+
+    <button type="button" class="btn btn-success btn-block" onclick="generateResume()">Visualizar Currículo</button>
+    <button type="button" class="btn btn-info btn-block" onclick="printResume()">Imprimir Currículo</button>
+</div>
+
+<div id="resume" class="hidden">
+    <h2>Currículo</h2>
+    <div id="resume-content"></div>
+</div>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
